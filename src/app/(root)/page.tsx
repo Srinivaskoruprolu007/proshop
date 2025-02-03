@@ -1,10 +1,10 @@
 
 import React from 'react'
 
-const page:React.FC = () => {
+const Homepage: React.FC = () => {
   return (
-    <div>page</div>
+    <div>ProShop</div>
   )
 }
 
-export default page
+export default Homepage

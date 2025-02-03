@@ -3,10 +3,15 @@ import { Inter } from "next/font/google";
 import "@/assets/styles/globals.css"
 import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
+import { APP_NAME, APP_DESCRIPTION, SERVER_URL } from "@/lib/constants/index"
 
 export const metadata: Metadata = {
-  title: "ProShop",
-  description: "A modern solution for your all shopping needs",
+  title: {
+    template: `%s | Proshop`,
+    default: `${APP_NAME}`
+  },
+  description: `${APP_DESCRIPTION}`,
+  metadataBase: new URL(SERVER_URL)
 };
 
 export default function RootLayout({
