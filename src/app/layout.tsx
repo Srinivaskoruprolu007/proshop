@@ -4,6 +4,7 @@ import "@/assets/styles/globals.css"
 import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
 import { APP_NAME, APP_DESCRIPTION, SERVER_URL } from "@/lib/constants/index"
+import Header from "@/components/shared/header";
 
 export const metadata: Metadata = {
   title: {
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
