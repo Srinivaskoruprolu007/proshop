@@ -1,7 +1,4 @@
-
-import React from 'react'
-
-const Homepage: React.FC = () => {
+const Homepage = () => {
   return (
     <div>ProShop</div>
   )
