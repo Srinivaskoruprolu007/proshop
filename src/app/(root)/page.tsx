@@ -3,7 +3,7 @@ import ProductList from "@/components/shared/products/product-list";
 const Homepage = () => {
   return (
     <>
-      <ProductList data={sampleData} title={"Newest Arrival"}/>
+      <ProductList data={sampleData.products} title={"Newest Arrival"} limit={4}/>
     </>
   )
 }
