@@ -1,6 +1,10 @@
+import sampleData from "@/db/sample-data";
+import ProductList from "@/components/shared/products/product-list";
 const Homepage = () => {
   return (
-    <div>ProShop</div>
+    <>
+      <ProductList data={sampleData} title={"Newest Arrival"}/>
+    </>
   )
 }
 
