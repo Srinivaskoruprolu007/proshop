@@ -3,17 +3,20 @@ import { badgeVariants } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getSingleProduct } from "@/lib/actions/product.actions";
-import { Badge } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { notFound } from "next/navigation";
+import ProductImages from "@/components/shared/product-images";
 
-const ProductDetailsPage = async (props: {
-  params: Promise<{ slug: string }>;
-}) => {
-  const params = await props.params;
+const ProductDetailsPage = async (props: { params: { slug: string } }) => {
+  const params = props.params;
+  console.log(params);
 
   const { slug } = params;
+  console.log(slug);
 
   const product = await getSingleProduct(slug);
+  console.log(product);
+
   if (!product) {
     return notFound();
   }
@@ -23,7 +26,10 @@ const ProductDetailsPage = async (props: {
       <section>
         <div className="grid grid-cols-1 md:grid-cols-5">
           {/* Images colums */}
-          <div className="col-span-2">{/* Add Images */}</div>
+          <div className="col-span-2">
+            {/* Add Images */}
+            <ProductImages images={product.images} />
+          </div>
           {/* Product details */}
           <div className="col-span-2 p-5">
             <div className="flex flex-col gap-6">
@@ -63,7 +69,11 @@ const ProductDetailsPage = async (props: {
                       In Stock
                     </Badge>
                   ) : (
-                    <Badge className="bg-destructive">Out of Stock</Badge>
+                    <Badge
+                      className={badgeVariants({ variant: "destructive" })}
+                    >
+                      Out of Stock
+                    </Badge>
                   )}
                 </div>
                 {product.stock > 0 && (
@@ -79,3 +89,5 @@ const ProductDetailsPage = async (props: {
     </>
   );
 };
+
+export default ProductDetailsPage;
