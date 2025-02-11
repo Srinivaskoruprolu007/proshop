@@ -7,8 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { notFound } from "next/navigation";
 import ProductImages from "@/components/shared/product-images";
 
-const ProductDetailsPage = async (props: { params: Promise<{ slug: string }> }) => {
-  const params = props.params;
+const ProductDetailsPage = async (props: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const params = await props.params;
   console.log(params);
 
   const { slug } = params;
