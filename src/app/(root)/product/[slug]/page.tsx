@@ -1,4 +1,5 @@
 import ProductPrice from "@/components/shared/products/product-price";
+import { badgeVariants } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getSingleProduct } from "@/lib/actions/product.actions";
@@ -58,7 +59,9 @@ const ProductDetailsPage = async (props: {
                 <div className="mb-2 flex justify-between">
                   <div>Status</div>
                   {product.stock > 0 ? (
-                    <Badge>In Stock</Badge>
+                    <Badge className={badgeVariants({ variant: "outline" })}>
+                      In Stock
+                    </Badge>
                   ) : (
                     <Badge className="bg-destructive">Out of Stock</Badge>
                   )}
