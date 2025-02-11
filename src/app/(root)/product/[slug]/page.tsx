@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { notFound } from "next/navigation";
 import ProductImages from "@/components/shared/product-images";
 
-const ProductDetailsPage = async (props: { params: { slug: string } }) => {
+const ProductDetailsPage = async (props: { params: Promise<{ slug: string }> }) => {
   const params = props.params;
   console.log(params);
 
