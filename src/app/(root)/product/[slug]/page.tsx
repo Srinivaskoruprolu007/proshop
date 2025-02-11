@@ -11,10 +11,10 @@ const ProductDetailsPage = async ({ params }: { params: { slug: string } }) => {
   console.log(params); // Should output: { slug: 'polo-sporting-stretch-shirt' }
 
   const { slug } = params;
-  console.log(slug);  // Should output: 'polo-sporting-stretch-shirt'
+  console.log(slug); // Should output: 'polo-sporting-stretch-shirt'
 
   const product = await getSingleProduct(slug);
-  console.log(product);  // Should show product details or null
+  console.log(product); // Should show product details or null
 
   if (!product) {
     return notFound();
@@ -31,9 +31,13 @@ const ProductDetailsPage = async ({ params }: { params: { slug: string } }) => {
         {/* Product details */}
         <div className="col-span-2 p-5">
           <div className="flex flex-col gap-6">
-            <p>{product.brand} {product.category}</p>
+            <p>
+              {product.brand} {product.category}
+            </p>
             <h1 className="h3-bold">{product.name}</h1>
-            <p>{product.rating} Stars ({product.numReviews} Reviews)</p>
+            <p>
+              {product.rating} Stars ({product.numReviews} Reviews)
+            </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <ProductPrice
                 value={Number(product.price)}
