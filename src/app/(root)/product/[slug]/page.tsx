@@ -7,14 +7,13 @@ import { Badge } from "@/components/ui/badge";
 import { notFound } from "next/navigation";
 import ProductImages from "@/components/shared/product-images";
 
-const ProductDetailsPage = async ({ params }: { params: { slug: string } }) => {
-  console.log(params); // Should output: { slug: 'polo-sporting-stretch-shirt' }
+const ProductDetailsPage = async ({ params }: { params: { slug: string } }) => {// Should output: { slug: 'polo-sporting-stretch-shirt' }
 
   const { slug } = params;
-  console.log(slug); // Should output: 'polo-sporting-stretch-shirt'
+  // Should output: 'polo-sporting-stretch-shirt'
 
   const product = await getSingleProduct(slug);
-  console.log(product); // Should show product details or null
+   // Should show product details or null
 
   if (!product) {
     return notFound();
