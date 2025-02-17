@@ -67,9 +67,4 @@ model Account {
   @@id([provider, providerAccountId], map: "account_provider_providerAccountId_pk")
 }
 
-model Session {
-  userId       String   @db.Uuid()
-  expiresAt    DateTime @default(now()) @db.Timestamp(6)
-  sessionToken String   @unique(map: "session_sessionToken_idx")
-  User         User     @relation(fields: [userId], references: [id])
-}
+
