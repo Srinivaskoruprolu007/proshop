@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   },
   description: APP_DESCRIPTION,
   metadataBase: new URL(SERVER_URL),
+  icons: "/favicon.svg",
 };
 
 export default function RootLayout({
@@ -28,9 +29,10 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
-        >          {children}
+        >
+          {" "}
+          {children}
         </ThemeProvider>
-
       </body>
     </html>
   );
