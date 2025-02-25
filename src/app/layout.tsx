@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import "@/assets/styles/globals.css";
 import { APP_NAME, APP_DESCRIPTION, SERVER_URL } from "@/lib/constants";
 import { ThemeProvider } from "next-themes";
-import Header from "@/components/shared/header";
-import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +13,7 @@ export const metadata: Metadata = {
   },
   description: APP_DESCRIPTION,
   metadataBase: new URL(SERVER_URL),
+  icons: "/favicon.svg",
 };
 
 export default function RootLayout({
@@ -31,11 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-
+          {" "}
           {children}
         </ThemeProvider>
-        <Footer />
       </body>
     </html>
   );
