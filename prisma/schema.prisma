@@ -67,7 +67,6 @@ model Account {
   @@id([provider, providerAccountId], map: "account_provider_providerAccountId_pk")
 }
 
-<<<<<<< HEAD
 model Session {
   userId       String   @db.Uuid()
   expiresAt    DateTime @default(now()) @db.Timestamp(6)
@@ -83,6 +82,4 @@ model VerificationToken {
 
   @@id([identifier, token])
 }
-=======
->>>>>>> 1d0dd9079f575d5383c2b5029fee5290a5393835
 
